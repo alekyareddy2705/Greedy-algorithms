@@ -1,0 +1,16 @@
+def jobScheduling(jobs):
+    n=len(jobs)
+    jobs.sort(key = lambda x: -x[2]
+    maxDeadline=0
+    for row in range(0,n):
+        maxDeadline=max(maxDeadline,jobs[row][1])
+    slots=[-1]*(maxDeadline+1)
+    count,maxProfit=0,0
+    for row in range(0,n):
+        for deadline in range(jobs[row][1],0,-1):
+            if(slots[deadline]==-1):
+                slots[deadline]=jobs[row][0]
+                count++1
+                maxProfit+=job[row][2]
+                break
+    return [count,maxprofit]
