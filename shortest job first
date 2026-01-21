@@ -1,0 +1,10 @@
+class Solution:
+    def solve(self, bt):
+        # Code here
+        bt.sort()
+        wait_time=0
+        total_time=0
+        for i in bt:
+            wait_time+=total_time
+            total_time+=i
+        return wait_time//len(bt)
